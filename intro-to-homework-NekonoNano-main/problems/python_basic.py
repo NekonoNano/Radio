@@ -6,7 +6,10 @@
 # 例如，输入5，返回120
 # 提示：使用 for 循环实现
 def factorial(n):
-    pass  # pass 是一个空语句，它不做任何事情，一般用作占位语句; 请删除 pass 再编写代码
+    result = 1
+    for i in range(1,n+1):
+        result +=i
+    return result
 
 
 # 斐波那契数列是一个非常常见的数列，它的第一个和第二个数字都是1，之后的每个数字都是前两个数字之和。例如，斐波那契数列的前10个数字是：1, 1, 2, 3, 5, 8, 13, 21, 34, 55
@@ -14,7 +17,10 @@ def factorial(n):
 # 例如，输入3，返回2；输入5，返回5
 # 提示：使用递归实现
 def fibonacci(n):
-    pass
+    if n <= 2:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n-2)
 
 
 # 计算两条直线的交点
@@ -23,7 +29,16 @@ def fibonacci(n):
 # 如果两条直线平行或重合，返回 None
 # 例如，输入[1, 1, 1] 和 [2, 2, 2]，返回 None；输入[1, 1, 1] 和 [0, 1, 0]，返回 [1, 0]
 def intersection(line1, line2):
-    pass
+    a1,b1,c1 =line1
+    a2,b2,c2 =line2
+    d = a1*b2-a2*b1
+    if d == 0:
+        return None
+    else:
+        x = (c1*b2-c2*b1)/d
+        y = (a1*c2-a2*c1)/d
+        return [x,y]
+        
 
 
 if __name__ == "__main__":
